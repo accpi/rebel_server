@@ -5,7 +5,7 @@ var bodyParser = require('body-parser')
 var morgan = require('morgan')
 
 var app = express()
-const port = 3001
+const port = 3000
 
 // Logging
 app.use(morgan('combined'))
