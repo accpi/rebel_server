@@ -18,9 +18,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // All routes are in this singular file since this is a pretty naive implementation
+// Trivial to split them into their own files based on table, but I've only got 1 table for this solution
+
 // Root
 app.get("/", (req, res) => {
-    res.send("Nelson for the Rebel Software Developer Position");
+    res.send("Nelson Kim for the Rebel Software Developer Position");
 });
 
 // The weirdest response code
