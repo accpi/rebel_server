@@ -4,6 +4,7 @@ Rebel Coding Test - Express REST API
 ## Implementation
 
 This is a simple one file Express REST API, the database (Postgres) is a naive implementation with all the data in one table.
+If making a larger, more production style database, the amount of plays would be found by looking through a table with all the plays by users, and payment info/rate would also be in their own tables.
 
 ## Available Scripts
 
