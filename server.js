@@ -93,8 +93,8 @@ app.put(
     param("id").isInt(),
     body("artist").not().isEmpty().escape(),
     body("rate").isFloat(),
-	body("streams").isNumeric(),
-	body("paid").isBoolean(),
+    body("streams").isNumeric(),
+    body("paid").isBoolean(),
     (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -102,6 +102,7 @@ app.put(
         }
 
         let id = req.params.id;
+        let { artist, rate, streams, paid } = req.body;
 
         db.oneOrNone(
             "UPDATE artists SET (artist, rate, streams, paid) = ($2, $3, $4, $5) WHERE ID = $1 RETURNING *",
@@ -111,6 +112,7 @@ app.put(
                 return res.send(data);
             })
             .catch((error) => {
+                console.log(error);
                 console.log(error.message || error);
                 return res.status(500).send(error.code);
             });
