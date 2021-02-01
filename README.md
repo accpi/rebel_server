@@ -22,9 +22,11 @@ This server is hosted on Heroku [https://rebel-server.herokuapp.com/](https://re
 **Required Body:**
 `artist=[string]`
 `rate=[decimal]`
+
+**Optional Body:**
 `streams=[integer]`
 
-**Code:** 200 <br />
+**Code:** 201 <br />
 **Content:** `{artist: string, rate: decimal, streams: integer, paid: boolean}`
 
 ### `PUT` /artists/:id
