@@ -8,6 +8,43 @@ If making a larger, more production style database, you'd have multiple tables (
 
 This server is hosted on Heroku [https://rebel-server.herokuapp.com/](https://rebel-server.herokuapp.com/) and doesn't feature any sort of access security, which could easily be added by grabbing a login and recieving a token (like JWT) that would be sent and verified on every request through simple middleware.
 
+## Endpoints
+
+### `GET` /artists
+**Code:** 200 <br />
+**Content:** `[{artist: string, rate: decimal, streams: integer, paid: boolean}, ...]`
+
+### `GET` /artists/:id
+**Code:** 200 <br />
+**Content:** `{artist: string, rate: decimal, streams: integer, paid: boolean}`
+
+### `POST` /artists
+**Required Body:**
+`artist=[string]`
+`rate=[decimal]`
+`streams=[integer]`
+
+**Code:** 200 <br />
+**Content:** `{artist: string, rate: decimal, streams: integer, paid: boolean}`
+
+### `PUT` /artists/:id
+**Required:**
+`id=[integer]`
+`artist=[string]`
+`rate=[decimal]`
+`streams=[integer]`
+`paid=[boolean]`
+
+**Code:** 200 <br />
+**Content:** `{artist: string, rate: decimal, streams: integer, paid: boolean}`
+
+### `DELETE` /artists/:id
+**Required:**
+`id=[integer]`
+
+**Code:** 200 <br />
+**Content:** `{artist: string, rate: decimal, streams: integer, paid: boolean}`
+
 ## Available Scripts
 
 In the project directory, you can run:
